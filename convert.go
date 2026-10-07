@@ -1,13 +1,21 @@
 package main
 
+import "strconv"
+
 // HexToDec convertit un nombre hexadécimal en décimal (ex : "1E" -> "30").
-// TODO : utiliser strconv.ParseInt(s, 16, 64)
 func HexToDec(s string) (string, error) {
-	return s, nil
+	n, err := strconv.ParseInt(s, 16, 64)
+	if err != nil {
+		return "", err
+	}
+	return strconv.FormatInt(n, 10), nil
 }
 
 // BinToDec convertit un nombre binaire en décimal (ex : "10" -> "2").
-// TODO : utiliser strconv.ParseInt(s, 2, 64)
 func BinToDec(s string) (string, error) {
-	return s, nil
+	n, err := strconv.ParseInt(s, 2, 64)
+	if err != nil {
+		return "", err
+	}
+	return strconv.FormatInt(n, 10), nil
 }
